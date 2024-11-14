@@ -8,9 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@finsweet/attributes-cmsfilter':
+        specifier: ^1.16.3
+        version: 1.16.3
+      '@finsweet/attributes-cmsnest':
+        specifier: ^1.12.0
+        version: 1.12.0
       '@finsweet/ts-utils':
         specifier: ^0.40.0
         version: 0.40.0
+      '@splidejs/splide':
+        specifier: ^4.1.4
+        version: 4.1.4
     devDependencies:
       '@changesets/changelog-git':
         specifier: ^0.2.0
@@ -20,7 +29,7 @@ importers:
         version: 2.27.1
       '@finsweet/eslint-config':
         specifier: ^2.0.7
-        version: 2.0.7(@typescript-eslint/eslint-plugin@7.1.1)(@typescript-eslint/parser@7.1.1)(eslint-config-prettier@9.1.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-simple-import-sort@12.0.0)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
+        version: 2.0.7(@typescript-eslint/eslint-plugin@7.1.1(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.3.3))(eslint@8.57.0)(typescript@5.3.3))(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.3.3))(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5))(eslint-plugin-simple-import-sort@12.0.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@finsweet/tsconfig':
         specifier: ^1.3.4
         version: 1.3.4(typescript@5.3.3)
@@ -29,7 +38,7 @@ importers:
         version: 1.42.1
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.1.1
-        version: 7.1.1(@typescript-eslint/parser@7.1.1)(eslint@8.57.0)(typescript@5.3.3)
+        version: 7.1.1(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.3.3))(eslint@8.57.0)(typescript@5.3.3)
       '@typescript-eslint/parser':
         specifier: ^7.1.1
         version: 7.1.1(eslint@8.57.0)(typescript@5.3.3)
@@ -47,7 +56,7 @@ importers:
         version: 9.1.0(eslint@8.57.0)
       eslint-plugin-prettier:
         specifier: ^5.1.3
-        version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
+        version: 5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5)
       eslint-plugin-simple-import-sort:
         specifier: ^12.0.0
         version: 12.0.0(eslint@8.57.0)
@@ -288,6 +297,12 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
+  '@finsweet/attributes-cmsfilter@1.16.3':
+    resolution: {integrity: sha512-jAD04uPIGIOxUk2DSXqr0d6kYjXf1QGxZ1uU/FuiMsqg5g7CDKXdHLJjYvta68zOQ8YgPgQDbV4wl30UqjGaVQ==}
+
+  '@finsweet/attributes-cmsnest@1.12.0':
+    resolution: {integrity: sha512-JrLVEflPFyxnxiYadSXA8+5vlhxSpmMWdN0PVy9y5/VaQ35wb+mE63oUfULx8WsH6PDV5F6MWccKNCSz9fbEsQ==}
+
   '@finsweet/eslint-config@2.0.7':
     resolution: {integrity: sha512-7twyMzYbt2RCKqkaApORAI2R8ZK3234t9lXD5uBsaWT9JL0avg6gHULGW8aTqxNrdZ0zlfFpCGcUnCiZUxH32w==}
     peerDependencies:
@@ -345,6 +360,9 @@ packages:
     resolution: {integrity: sha512-Gq9rmS54mjBL/7/MvBaNOBwbfnh7beHvS6oS4srqXFcQHpQCV1+c8JXWE8VLPyRDhgS3H8x8A7hztqI9VnwrAQ==}
     engines: {node: '>=16'}
     hasBin: true
+
+  '@splidejs/splide@4.1.4':
+    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -1057,6 +1075,9 @@ packages:
 
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
+
+  just-debounce@1.1.0:
+    resolution: {integrity: sha512-qpcRocdkUmf+UTNBYx5w6dexX5J31AKK1OmPwH630a83DdVVUIngk55RSAiIGpQyoH0dlr872VHfPjnQnK1qDQ==}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -1892,13 +1913,19 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@finsweet/eslint-config@2.0.7(@typescript-eslint/eslint-plugin@7.1.1)(@typescript-eslint/parser@7.1.1)(eslint-config-prettier@9.1.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-simple-import-sort@12.0.0)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)':
+  '@finsweet/attributes-cmsfilter@1.16.3':
     dependencies:
-      '@typescript-eslint/eslint-plugin': 7.1.1(@typescript-eslint/parser@7.1.1)(eslint@8.57.0)(typescript@5.3.3)
+      just-debounce: 1.1.0
+
+  '@finsweet/attributes-cmsnest@1.12.0': {}
+
+  '@finsweet/eslint-config@2.0.7(@typescript-eslint/eslint-plugin@7.1.1(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.3.3))(eslint@8.57.0)(typescript@5.3.3))(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.3.3))(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5))(eslint-plugin-simple-import-sort@12.0.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)':
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 7.1.1(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.3.3))(eslint@8.57.0)(typescript@5.3.3)
       '@typescript-eslint/parser': 7.1.1(eslint@8.57.0)(typescript@5.3.3)
       eslint: 8.57.0
       eslint-config-prettier: 9.1.0(eslint@8.57.0)
-      eslint-plugin-prettier: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
+      eslint-plugin-prettier: 5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5)
       eslint-plugin-simple-import-sort: 12.0.0(eslint@8.57.0)
       prettier: 3.2.5
       typescript: 5.3.3
@@ -1955,6 +1982,8 @@ snapshots:
     dependencies:
       playwright: 1.42.1
 
+  '@splidejs/splide@4.1.4': {}
+
   '@types/json-schema@7.0.15': {}
 
   '@types/minimist@1.2.5': {}
@@ -1965,7 +1994,7 @@ snapshots:
 
   '@types/semver@7.5.8': {}
 
-  '@typescript-eslint/eslint-plugin@7.1.1(@typescript-eslint/parser@7.1.1)(eslint@8.57.0)(typescript@5.3.3)':
+  '@typescript-eslint/eslint-plugin@7.1.1(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.3.3))(eslint@8.57.0)(typescript@5.3.3)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
       '@typescript-eslint/parser': 7.1.1(eslint@8.57.0)(typescript@5.3.3)
@@ -1980,6 +2009,7 @@ snapshots:
       natural-compare: 1.4.0
       semver: 7.6.0
       ts-api-utils: 1.2.1(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -1992,6 +2022,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 7.1.1
       debug: 4.3.4
       eslint: 8.57.0
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -2008,6 +2039,7 @@ snapshots:
       debug: 4.3.4
       eslint: 8.57.0
       ts-api-utils: 1.2.1(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -2024,6 +2056,7 @@ snapshots:
       minimatch: 9.0.3
       semver: 7.6.0
       ts-api-utils: 1.2.1(typescript@5.3.3)
+    optionalDependencies:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
@@ -2376,13 +2409,14 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5):
+  eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5):
     dependencies:
       eslint: 8.57.0
-      eslint-config-prettier: 9.1.0(eslint@8.57.0)
       prettier: 3.2.5
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.8
+    optionalDependencies:
+      eslint-config-prettier: 9.1.0(eslint@8.57.0)
 
   eslint-plugin-simple-import-sort@12.0.0(eslint@8.57.0):
     dependencies:
@@ -2768,6 +2802,8 @@ snapshots:
   jsonfile@4.0.0:
     optionalDependencies:
       graceful-fs: 4.2.11
+
+  just-debounce@1.1.0: {}
 
   keyv@4.5.4:
     dependencies:
