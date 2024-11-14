@@ -6,7 +6,6 @@ export const toggleMenuItemImage = (element: HTMLElement) => {
     icon.src =
       'https://cdn.prod.website-files.com/672a5835c715ca6f0ce6d7f2/6733aa6f5579c05aed4d3579_camera-off.svg';
   } else {
-    console.log('change to open icon');
     icon.src =
       'https://cdn.prod.website-files.com/672a5835c715ca6f0ce6d7f2/6733aa6aa8fb6bdbaa4b38bf_camera.svg';
   }
