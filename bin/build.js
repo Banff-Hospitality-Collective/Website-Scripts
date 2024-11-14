@@ -7,7 +7,13 @@ const BUILD_DIRECTORY = 'dist';
 const PRODUCTION = process.env.NODE_ENV === 'production';
 
 // Config entrypoint files
-const ENTRY_POINTS = ['src/index.ts'];
+const ENTRY_POINTS = [
+  'src/index.ts',
+  //PIZZERIA SOPHIA
+  //MENU PAGE
+  'src/websites/pizzeria-sophia/menu/index.ts',
+  'src/websites/pizzeria-sophia/menu/styles.css',
+];
 
 // Config dev serving
 const LIVE_RELOAD = !PRODUCTION;
