@@ -1,12 +1,11 @@
 import Splide from '@splidejs/splide';
 
 import { documentEl, floatingNavEl } from '$pizzeriaSophia/elements';
-import { isVisable } from '$utils/viewport';
-
-import { ScrollToAnchor } from '$utils/links';
-import { GetElement, GetAllElements } from '$utils/common';
+import { GetAllElements, GetElement } from '$utils/common';
 import { isChecked } from '$utils/forms';
+import { ScrollToAnchor } from '$utils/links';
 import { toggleMenuItemImage } from '$utils/menus';
+import { isVisable } from '$utils/viewport';
 
 declare const window: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
@@ -134,7 +133,7 @@ window.Webflow.push(() => {
   window.fsAttributes = window.fsAttributes || [];
   window.fsAttributes.push([
     'cmsnest',
-    (listInstances: any): void => {
+    (listInstances: never): void => {
       window.fsAttributes.cmsfilter.init();
       console.log('done!', listInstances);
     },
