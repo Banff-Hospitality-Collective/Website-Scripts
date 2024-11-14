@@ -133,9 +133,9 @@ window.Webflow.push(() => {
   window.fsAttributes = window.fsAttributes || [];
   window.fsAttributes.push([
     'cmsnest',
-    (listInstances: never): void => {
+    //(listInstances: never): void => {
+    (): void => {
       window.fsAttributes.cmsfilter.init();
-      console.log('done!', listInstances);
     },
   ]);
 });
