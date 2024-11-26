@@ -90,15 +90,16 @@ window.Webflow.push(() => {
 
   window.fsAttributes = window.fsAttributes || [];
   window.fsAttributes.push([
-    'cmsnest',
+    'cmsload',
     //(listInstances: never): void => {
     (): void => {
-      window.fsAttributes.cmsfilter.init();
+      window.fsAttributes.cmsnest.init();
 
+      window.fsAttributes = window.fsAttributes || [];
       window.fsAttributes.push([
-        'cmsfilter',
-        (): void => {
-          //console.log(filterInstances);
+        'cmsnest',
+        () => {
+          window.fsAttributes.cmsfilter.init();
         },
       ]);
 
