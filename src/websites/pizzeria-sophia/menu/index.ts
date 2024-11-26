@@ -88,72 +88,57 @@ window.Webflow.push(() => {
     ScrollToAnchor(item, 'data-scroll')
   );
 
-  window.fsAttributes = window.fsAttributes || [];
-  window.fsAttributes.push([
-    'cmsload',
-    //(listInstances: never): void => {
-    (): void => {
-      window.fsAttributes.cmsnest.init();
+  window.addEventListener('load', (): void => {
+    /*
+     *
+     * MENU ITEM - SHOW IMAGE
+     *
+     * */
+    //const menuItemImageOpenAttr = 'data-menu-image="trigger"' as string;
+    const menuItemImageOpenAttr = 'menu-item-trigger' as string;
+    GetAllElements(menuItemImageOpenAttr)?.forEach((element: HTMLElement): void => {
+      if (
+        element?.closest('.image-trigger')?.querySelector('.auto-open-trigger')?.innerHTML ===
+        'true'
+      ) {
+        toggleMenuItemImage(element);
+      }
+      element?.addEventListener('click', (): void => {
+        toggleMenuItemImage(element);
+      });
+    });
 
-      window.fsAttributes = window.fsAttributes || [];
-      window.fsAttributes.push([
-        'cmsnest',
-        () => {
-          window.fsAttributes.cmsfilter.init();
-        },
-      ]);
+    /*
+     *
+     * FILTER COUNTER
+     * Add or subtract the total number of active filters
+     * Go to the filterCountSpanAttr const in the elements.ts file for the data attribute
+     *
+     * */
+    let totalActiveFilters: number = 0;
+    const filterCountSpanAttr = 'filters-checked' as string;
+    const filterCountSpan = GetElement(filterCountSpanAttr);
 
-      /*
-       *
-       * MENU ITEM - SHOW IMAGE
-       *
-       * */
-      //const menuItemImageOpenAttr = 'data-menu-image="trigger"' as string;
-      const menuItemImageOpenAttr = 'menu-item-trigger' as string;
-      GetAllElements(menuItemImageOpenAttr)?.forEach((element: HTMLElement): void => {
-        if (
-          element?.closest('.image-trigger')?.querySelector('.auto-open-trigger')?.innerHTML ===
-          'true'
-        ) {
-          toggleMenuItemImage(element);
+    GetAllElements('fs-cmsfilter-field')?.forEach((field: Node): void => {
+      field.addEventListener('change', (e: Event): void => {
+        if (isChecked(e)) {
+          totalActiveFilters += 1;
+        } else {
+          totalActiveFilters -= 1;
         }
-        element?.addEventListener('click', (): void => {
-          toggleMenuItemImage(element);
-        });
+        filterCountSpan!.innerText = totalActiveFilters.toString();
+
+        // const wrapper = document.querySelectorAll(
+        //   '[data-menu-items="wrapper"]'
+        // ) as NodeListOf<HTMLElement>;
+        // wrapper.forEach((element: HTMLElement): void => {
+        //   //console.log('element', window.getComputedStyle(element).display);
+        //   console.log('element', element);
+        //   if (element.children.length === 0) {
+        //     element.innerHTML = 'EMPTY!!!!!';
+        //   }
+        // });
       });
-
-      /*
-       *
-       * FILTER COUNTER
-       * Add or subtract the total number of active filters
-       * Go to the filterCountSpanAttr const in the elements.ts file for the data attribute
-       *
-       * */
-      let totalActiveFilters: number = 0;
-      const filterCountSpanAttr = 'filters-checked' as string;
-      const filterCountSpan = GetElement(filterCountSpanAttr);
-
-      GetAllElements('fs-cmsfilter-field')?.forEach((field: Node): void => {
-        field.addEventListener('change', (e: Event): void => {
-          if (isChecked(e)) {
-            totalActiveFilters += 1;
-          } else {
-            totalActiveFilters -= 1;
-          }
-          filterCountSpan!.innerText = totalActiveFilters.toString();
-
-          // const wrapper = document.querySelectorAll(
-          //   '[data-menu-items="wrapper"]'
-          // ) as NodeListOf<HTMLElement>;
-          // wrapper.forEach((element: HTMLElement): void => {
-          //   //console.log('element', window.getComputedStyle(element).display);
-          //   console.log('element', element);
-          //   if (element.children.length === 0) {
-          //     element.innerHTML = 'EMPTY!!!!!';
-          //   }
-          // });
-        });
-      });
-    },
-  ]);
+    });
+  });
 });
